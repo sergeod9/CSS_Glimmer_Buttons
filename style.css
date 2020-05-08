@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    padding:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    background-color: rgb(46, 46, 46);
+}
+
+.container{
+    /* border: 2px dotted red; */
+    width: 260px;
+    height: 260px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    align-items: center;
+}
+
+
+.test{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.322);
+    transition-property: transform, box-shadow;
+    transition-duration: .3s;
+    text-align: center;
+}
+.test:hover{
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.144);
+}
+
+.test::after{
+    content:"";
+    background: linear-gradient(to bottom, rgba(223, 232, 245, 0.541), rgba(189, 205, 221, 0.082));
+    width: 33px;
+    height: 60px;
+    position: absolute;
+    top: -2px;
+    transform: skewX(-25deg) translateX(-70px);
+}
+
+.test:hover.test::after{
+    transform: skew(-25deg) translateX(60px);
+    animation-name: gloss;
+    animation-duration: .5s;
+}
+
+@keyframes gloss{
+    0%{
+    transform: skewX(-25deg) translateX(-30px);
+    }
+
+    100%{
+    transform: skew(-25deg) translateX(60px);
+    }
+}
+
+.icon{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:inherit;
+    height: inherit;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+
+}
+
+.one-line{ 
+    font-size: 2.2rem;
+}
+.two-lines--up{
+    font-size: .8rem;
+    margin-top: 7px;
+}
+.two-lines--down{
+    margin-top: -15px;
+    font-weight: 500;
+    font-size: 2.2rem;
+}
+
+.green{
+    background: linear-gradient(to bottom, rgb(86, 201, 125), rgb(150, 223, 153));
+
+}
+
+.blue{
+    background: linear-gradient(to bottom, rgb(43, 119, 206), rgb(128, 176, 231));
+}
+
+.red{
+    background: linear-gradient(to bottom, rgb(206, 43, 43), rgb(231, 128, 128));
+}
+
+.orange{
+    background: linear-gradient(to bottom, rgb(228, 91, 28), rgb(231, 134, 77));
+}
+
+.yellow{
+    background: linear-gradient(to bottom, rgb(255, 239, 10), rgb(245, 221, 87));
+
+}
+.purple{
+background: linear-gradient(to bottom, rgb(166, 71, 204), rgb(192, 115, 216));
+}
